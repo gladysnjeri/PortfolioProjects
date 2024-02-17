@@ -39,8 +39,8 @@ FROM PortfolioProject..students
 WHERE inter_dom IN ('Inter', 'Dom')
 GROUP BY inter_dom
 
---average scores for each age group and length of stay of international students, to see if and how age impacts the scores
-
+--average scores based on age group and length of stay of international students, to see if and how they impact the scores
+--age group
 SELECT Age,
        ROUND(AVG(ToDep), 2) as avg_phq,
 	   ROUND(AVG(ToSC), 2) as avg_scs,
@@ -49,6 +49,8 @@ FROM PortfolioProject..students
 WHERE inter_dom = 'Inter'
 GROUP BY Age
 ORDER BY Age
+
+--length of stay	
 
 SELECT Stay,
        ROUND(AVG(ToDep), 2) as avg_phq,
